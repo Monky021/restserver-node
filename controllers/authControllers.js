@@ -57,7 +57,7 @@ const googleSingin = async (req = request, res = response) => {
     
     try {
         const {name, img, email} = await googleValidator(id_token);
-        console.log(name, img, email);
+        
         let user = await User.findOne({email});
         //Si el usuario no existe se crea
         if (!user){
